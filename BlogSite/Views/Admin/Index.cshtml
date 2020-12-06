@@ -1,0 +1,56 @@
+﻿@using BlogSite.Models.Tables
+@model List<Blog>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+
+<div style="margin-top:3%;margin-left:3%;">
+    <a href="/Admin/BlogAdd" class="btn btn-success">BLOG EKLE</a>
+
+</div>
+<div style="margin-top:3%; width:90%; margin-left:3%;">
+    <table class="table table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>BAŞLIK</th>
+            <th>İÇERİK</th>
+            <th>TARİH</th>
+            <th>SİL</th>
+            <th>DÜZENLE</th>
+
+
+
+        </tr>
+        @foreach (var blog in Model)
+        {
+            <tr>
+                <th scope="row">@blog.ID</th>
+                <td>
+                    @if (blog.Header.Length >= 50)
+                    {
+                        @blog.Header.Substring(0, 30)
+                    }
+                    else
+                    {
+                        @blog.Header
+                    }
+
+                </td>
+                <td> @blog.Statement.Substring(0, 30) </td>
+                <td>@blog.Date.ToString("dd-MM-yyyy")</td>
+                <td>
+                    <a href="/Admin/BlogDelete/@blog.ID" class="btn btn-danger">SİL</a>
+                </td>
+                <td>
+                    <a href="/Admin/BlogFind/@blog.ID" class="btn btn-primary">DÜZENLE</a>
+                </td>
+            </tr>
+
+        }
+
+    </table>
+</div>
+
+

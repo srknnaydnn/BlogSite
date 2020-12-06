@@ -1,0 +1,17 @@
+﻿<div class="content-form">
+    <h3>YORUM YAPIN...</h3>
+             
+    <form action="/Blog/Comment/" method="post">
+        <input  type="hidden" name="BlogID" value="@ViewBag.deger">
+        <input type="text" placeholder="Username" name="Username" />
+        <input type="text" placeholder="Email" name="Mail" required />
+        <textarea placeholder="Message" name="Comment"></textarea>
+        <input type="submit" value="SEND" />
+    </form>
+
+          
+      
+
+    
+
+</div>

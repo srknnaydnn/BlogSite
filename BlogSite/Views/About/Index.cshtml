@@ -1,0 +1,23 @@
+﻿@using BlogSite.Models.Tables
+@model List<About>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/index.cshtml";
+}
+
+
+<div class="content">           
+    <div class="wrap">
+        <div class="about">
+            <h3>Ben Kimim</h3>
+            @foreach (var list in Model)
+            {
+                <p>@Html.Raw(@list.Statement)</p>
+
+            }
+           
+
+        </div>
+    </div>
+</div>
+

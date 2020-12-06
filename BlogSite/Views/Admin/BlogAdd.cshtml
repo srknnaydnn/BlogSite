@@ -1,0 +1,37 @@
+﻿@model BlogSite.Models.Tables.Blog 
+@{
+    ViewBag.Title = "BlogAdd";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+
+<div style="margin-top:3%; width:80%; margin-left:5%;">
+ 
+  <form class="form-group" method="post">
+      
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Tarih</label>
+            <input type="date" class="form-control" placeholder="Tarih" name="Date">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Resim</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Resim" name="ImgUrl">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Başlık</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Başlık" name="Header">
+        </div>
+      
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">İçerik</label>
+
+            <textarea class="form-control" id="ckeditor" name="Statement"></textarea>
+            
+        </div>
+        <button type="submit" class="btn btn-primary btn-group-justified navbar-btn">Submit</button>
+    </form>
+</div>
+<script>
+    CKEDITOR.replace("Statement");
+</script>
+

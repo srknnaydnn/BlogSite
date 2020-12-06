@@ -1,0 +1,54 @@
+﻿@model BlogSite.Models.Tables.Blog
+@{
+    ViewBag.Title = "BlogFind";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<div style="margin-top:3%;width:80%; margin-left:5%;">
+    @using (Html.BeginForm("BlogUpdate", "Admin", FormMethod.Post))
+    {
+        <div class="form-group">
+          
+            @Html.TextBoxFor(x => x.ID, new { @class = "form-comtrol", @type = "hidden" })
+
+        </div>
+        <div class="form-group">
+            @Html.Label("Tarih")<br />
+            @Html.TextBoxFor(x => x.Date, new { @class = "form-comtrol", @type = "datetime" })
+
+        </div>
+        <div class="form-group">
+            @Html.Label("Resim")<br />
+            @Html.TextBoxFor(x => x.ImgUrl, new { @class = "form-comtrol" })
+
+
+        </div>
+        <div class="form-group">
+            @Html.Label("Başlık")<br />
+            @Html.TextBoxFor(x => x.Header, new { @class = "form-comtrol" })
+        </div>
+        <div class="form-group">
+            @Html.Label("İçerik")<br />
+            @Html.TextAreaFor(x => x.Statement, new { @class = "form-comtrol", @id = "summernote2" })
+        </div>
+        <button type="submit" class="btn btn-primary btn-group-justified navbar-btn">Submit</button>
+    }
+
+</div>
+<script>
+    $('#summernote2').summernote({
+        placeholder: 'İçerik',
+        tabsize: 2,
+        height: 200,
+        toolbar: [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            ['insert', ['link', 'picture', 'video']],
+            ['view', ['fullscreen', 'codeview', 'help']]
+        ]
+    });
+</script>
+

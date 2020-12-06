@@ -1,0 +1,81 @@
+﻿
+@model BlogSite.Models.Tables.BlogComments
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/index.cshtml";
+}
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link href="~/web1/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/web1/css/style.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Personal Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!----webfonts---->
+    <link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
+    <!----//webfonts---->
+
+</head>
+<body>
+
+    <div class="single">
+        <div class="container">
+            <div class="col-md-8 single-main">
+                <div class="single-grid">
+
+                    @foreach (var list in Model.blogs)
+                    {
+
+                        <img src="@list.ImgUrl" alt="" />
+                        <h3 style="margin-top:15px;">
+                            @if (list.Header.Length >= 50)
+                            {
+                                <a href="/Blog/BlogDetail/@list.ID">@list.Header.Substring(0,30)</a>
+                            }
+                            else
+                            {
+                                <a href="/Blog/BlogDetail/@list.ID">@list.Header</a>
+                            }
+
+
+                        </h3>
+
+
+                    }
+
+                </div>
+            </div>
+
+            <div class="col-md-4 side-content">
+                <div class="recent">
+                    <h3>SON YAZILAR</h3>
+                    @foreach (var blogs in Model.blogs1)
+                    {
+                        <ul>
+                            <li><a href="/Blog/BlogDetail/@blogs.ID">@blogs.Header</a></li>
+                        </ul>
+                    }
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+

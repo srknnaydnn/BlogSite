@@ -1,0 +1,58 @@
+﻿@using BlogSite.Models.Tables
+@model List<Adress>
+
+
+
+@foreach (var adres in Model)
+{
+    <div class="flex-w size1 p-b-47">
+        <div class="txt1 p-r-25">
+            <span class="lnr lnr-map-marker"></span>
+        </div>
+
+        <div class="flex-col size2">
+            <span class="txt1 p-b-20">
+                Adres
+            </span>
+
+            <span class="txt2">
+                @adres.OpenAdress
+            </span>
+        </div>
+    </div>
+
+    <div class="dis-flex size1 p-b-47">
+        <div class="txt1 p-r-25">
+            <span class="lnr lnr-phone-handset"></span>
+        </div>
+
+        <div class="flex-col size2">
+            <span class="txt1 p-b-20">
+                Telefon
+            </span>
+
+            <span class="txt3">
+                @adres.Telefone
+            </span>
+        </div>
+    </div>
+
+    <div class="dis-flex size1 p-b-47">
+        <div class="txt1 p-r-25">
+            <span class="lnr lnr-envelope"></span>
+        </div>
+
+        <div class="flex-col size2">
+            <span class="txt1 p-b-20">
+                E-mail Adres
+            </span>
+
+            <span class="txt3">
+                @adres.Mail
+            </span>
+        </div>
+    </div>
+
+
+}
+
